@@ -1,4 +1,4 @@
-# volunteer_hrs_tracking
+# Volunteer Hour Tracking
 
 The purpose of this project is to develop a way to track my volunteer hours for various ongoing projects / entities. This is a personal project, and is not intended for use by others.
 
