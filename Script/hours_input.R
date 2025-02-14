@@ -9,7 +9,7 @@ user_input <- "JJcrumpler"
 volunteer_hrs_path <- glue(here("Output", "{user_input}", "{user_input}_volunteer_hrs.csv"))
 
 if(dir_exists(glue(here("Output/{user_input}")))){
-  message(glue("{user_input} has already logged volunteer hours"))
+  message(glue("{user_input} has already logged hours"))
 } else {
   dir_create(glue(here("Output/{user_input}")))
   message(glue("New {user_input} directory created"))
@@ -53,7 +53,7 @@ if(file_exists(volunteer_hrs_path)){
 
 current_vlt_hrs <- read_csv(volunteer_hrs_path) |> 
   mutate(
-        Date = if_else(str_detect(Date, "\\d{2}\\/\\d{2}\\/\\d{2}"),
+        Date = if_else(str_detect(Date, "\\d{1,2}\\/\\d{1,2}\\/\\d{1,2}"),
                        mdy(Date), 
                        ymd(Date)),
         start_time = hms(start_time),
