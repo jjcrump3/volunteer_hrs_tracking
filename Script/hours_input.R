@@ -101,4 +101,13 @@ if(length(all_vlt_hrs_path) > 1){
 }
 
 
-
+all_vlt_hrs_data |> 
+  ggplot(aes(
+    x = Date,
+    y = cumulative_time)) +
+  geom_line() + 
+  scale_x_date(date_labels =  "%b %Y") +
+  labs(
+    title = glue("{str_to_upper(user_input)}\nCumulative Hours over time"),
+    x = "Dates of Hours",
+    y = "Cumulative Time")
