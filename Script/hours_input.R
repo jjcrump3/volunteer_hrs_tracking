@@ -102,6 +102,7 @@ if(length(all_vlt_hrs_path) > 1){
 
 
 all_vlt_hrs_data |> 
+  filter(Entity == "CGAC") |> 
   ggplot(aes(
     x = Date,
     y = cumulative_time)) +
